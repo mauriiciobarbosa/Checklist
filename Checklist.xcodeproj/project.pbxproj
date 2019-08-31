@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		221C63D9231ADD84001429F3 /* AddNewItemTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221C63D8231ADD84001429F3 /* AddNewItemTableViewController.swift */; };
+		221C63D9231ADD84001429F3 /* ItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221C63D8231ADD84001429F3 /* ItemDetailViewController.swift */; };
 		223779E4230888DE00732A83 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223779E3230888DE00732A83 /* AppDelegate.swift */; };
 		223779E6230888DE00732A83 /* ChecklistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223779E5230888DE00732A83 /* ChecklistViewController.swift */; };
 		223779E9230888DE00732A83 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 223779E7230888DE00732A83 /* Main.storyboard */; };
@@ -18,7 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		221C63D8231ADD84001429F3 /* AddNewItemTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewItemTableViewController.swift; sourceTree = "<group>"; };
+		221C63D8231ADD84001429F3 /* ItemDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailViewController.swift; sourceTree = "<group>"; };
 		223779E0230888DE00732A83 /* Checklist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Checklist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		223779E3230888DE00732A83 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		223779E5230888DE00732A83 /* ChecklistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistViewController.swift; sourceTree = "<group>"; };
@@ -60,7 +60,7 @@
 		223779E2230888DE00732A83 /* Checklist */ = {
 			isa = PBXGroup;
 			children = (
-				221C63D8231ADD84001429F3 /* AddNewItemTableViewController.swift */,
+				221C63D8231ADD84001429F3 /* ItemDetailViewController.swift */,
 				223779E3230888DE00732A83 /* AppDelegate.swift */,
 				223779E5230888DE00732A83 /* ChecklistViewController.swift */,
 				223779E7230888DE00732A83 /* Main.storyboard */,
@@ -147,7 +147,7 @@
 				223779E6230888DE00732A83 /* ChecklistViewController.swift in Sources */,
 				2290F246230F66620013A58D /* ChecklistItem.swift in Sources */,
 				223779E4230888DE00732A83 /* AppDelegate.swift in Sources */,
-				221C63D9231ADD84001429F3 /* AddNewItemTableViewController.swift in Sources */,
+				221C63D9231ADD84001429F3 /* ItemDetailViewController.swift in Sources */,
 				2290F248230F6DB70013A58D /* TodoList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

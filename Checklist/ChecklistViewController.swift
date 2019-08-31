@@ -59,7 +59,7 @@ class ChecklistViewController: UITableViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let viewController = segue.destination as? AddNewItemTableViewController {
+        if let viewController = segue.destination as? ItemDetailViewController {
             viewController.delegate = self
             
             if segue.identifier == "EditItemSegue",
@@ -71,19 +71,19 @@ class ChecklistViewController: UITableViewController {
     }
 }
 
-extension ChecklistViewController: AddItemViewControllerDelegate {
-    func addItemViewControllerDidCancel(_ controller: AddNewItemTableViewController) {
+extension ChecklistViewController: ItemDetailViewControllerDelegate {
+    func itemDetailViewControllerDidCancel(_ controller: ItemDetailViewController) {
         navigationController?.popViewController(animated: true)
     }
     
-    func addItemViewController(_ controller: AddNewItemTableViewController, didFinishAdding item: ChecklistItem) {
+    func itemDetailViewController(_ controller: ItemDetailViewController, didFinishAdding item: ChecklistItem) {
         todoList.add(item: item)
         let indexPath = IndexPath(row: todoList.size - 1, section: 0)
         tableView.insertRows(at: [indexPath], with: .left)
         navigationController?.popViewController(animated: true)
     }
     
-    func addItemViewController(_ controller: AddNewItemTableViewController, didFinishEditing item: ChecklistItem) {
+    func itemDetailViewController(_ controller: ItemDetailViewController, didFinishEditing item: ChecklistItem) {
         tableView.reloadData()
         navigationController?.popViewController(animated: true)
     }

@@ -8,15 +8,15 @@
 
 import UIKit
 
-protocol AddItemViewControllerDelegate: class {
-    func addItemViewControllerDidCancel(_ controller: AddNewItemTableViewController)
-    func addItemViewController(_ controller: AddNewItemTableViewController, didFinishAdding item: ChecklistItem)
-    func addItemViewController(_ controller: AddNewItemTableViewController, didFinishEditing item: ChecklistItem)
+protocol ItemDetailViewControllerDelegate: class {
+    func itemDetailViewControllerDidCancel(_ controller: ItemDetailViewController)
+    func itemDetailViewController(_ controller: ItemDetailViewController, didFinishAdding item: ChecklistItem)
+    func itemDetailViewController(_ controller: ItemDetailViewController, didFinishEditing item: ChecklistItem)
 }
 
-class AddNewItemTableViewController: UITableViewController {
+class ItemDetailViewController: UITableViewController {
     
-    weak var delegate: AddItemViewControllerDelegate?
+    weak var delegate: ItemDetailViewControllerDelegate?
     weak var editItem: ChecklistItem?
     
     @IBOutlet weak var cancelBarButton: UIBarButtonItem!
@@ -24,7 +24,7 @@ class AddNewItemTableViewController: UITableViewController {
     @IBOutlet weak var textField: UITextField!
     
     @IBAction func cancel(_ sender: UIBarButtonItem) {
-        delegate?.addItemViewControllerDidCancel(self)
+        delegate?.itemDetailViewControllerDidCancel(self)
     }
     
     @IBAction func done(_ sender: UIBarButtonItem) {
@@ -32,10 +32,10 @@ class AddNewItemTableViewController: UITableViewController {
             
             if let item = editItem {
                 item.text = title
-                delegate?.addItemViewController(self, didFinishEditing: item)
+                delegate?.itemDetailViewController(self, didFinishEditing: item)
             } else {
                 let newItem = ChecklistItem(with: title)
-                delegate?.addItemViewController(self, didFinishAdding: newItem)
+                delegate?.itemDetailViewController(self, didFinishAdding: newItem)
             }
         }
     }
@@ -57,7 +57,7 @@ class AddNewItemTableViewController: UITableViewController {
 
 }
 
-extension AddNewItemTableViewController : UITextFieldDelegate {
+extension ItemDetailViewController : UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         addBarButton.isEnabled = string.count > 0 || range.length < textField.text?.count ?? 0
         return true

@@ -10,15 +10,10 @@ import Foundation
 
 class TodoList {
     private var items: [ChecklistItem] = []
+    
     var size: Int {
         return items.count
     }
-    
-    let defaultTitles = ["New todo item",
-                  "Generic todo",
-                  "Fill me out",
-                  "I need something todo",
-                  "Much todo about nothing"]
     
     init(with size: Int = 5) {
         for index in 0..<size {
@@ -37,6 +32,10 @@ class TodoList {
         }
     }
     
+    func add(item newItem: ChecklistItem) {
+        items.append(newItem)
+    }
+    
     private func getLabel(_ index: Int) -> String {
         switch index {
         case 0:
@@ -50,16 +49,5 @@ class TodoList {
         default:
             return "Study design patterns"
         }
-    }
-    
-    func newItem() -> ChecklistItem {
-        let newItem = ChecklistItem(with: getRandomDescription(), true)
-        items.append(newItem)
-        return newItem
-    }
-    
-    private func getRandomDescription() -> String {
-        let selectedIndex = Int.random(in: 0 ... defaultTitles.count - 1)
-        return defaultTitles[selectedIndex]
     }
 }

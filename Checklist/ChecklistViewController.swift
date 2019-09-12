@@ -29,12 +29,9 @@ class ChecklistViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ChecklistItem", for: indexPath)
         let checklistItem = todoList.getItem(at: indexPath.row)
         
-        if let label = cell.viewWithTag(1000) as? UILabel {
-            label.text = checklistItem.text
-        }
-        
-        if let checkmark = cell.viewWithTag(1001) as? UILabel {
-            checkmark.isHidden = !checklistItem.isChecked
+        if let checkmarkCell = cell as? ChecklistTableViewCell {
+            checkmarkCell.todoTestLabel.text = checklistItem.text
+            checkmarkCell.checkmarkLabel.isHidden = !checklistItem.isChecked
         }
         
         return cell
@@ -44,8 +41,8 @@ class ChecklistViewController: UITableViewController {
         if let cell = tableView.cellForRow(at: indexPath) {
             let checklistItem = todoList.getItem(at: indexPath.row)
             
-            if let checkmark = cell.viewWithTag(1001) as? UILabel {
-                checkmark.isHidden = checklistItem.isChecked
+            if let checkmarkCell = cell as? ChecklistTableViewCell {
+                checkmarkCell.checkmarkLabel.isHidden = checklistItem.isChecked
                 checklistItem.toggleChecked()
             }
             
